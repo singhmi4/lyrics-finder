@@ -1,11 +1,15 @@
 import './App.css';
-import { Typography } from '@material-ui/core';
+import { MuiThemeProvider } from "@material-ui/core";
+import { theme } from "./themes/theme";
+import Navbar from './components/layout/Navbar'
 
 function App() {
   return (
-    <div className="App">
-      <Typography variant="h1" >Hello</Typography>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <div className="App">
+        <Navbar/>
+      </div>
+    </MuiThemeProvider>
   );
 }
 
