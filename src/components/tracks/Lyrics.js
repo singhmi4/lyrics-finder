@@ -70,7 +70,7 @@ const Lyrics = (props) => {
                     </ListItem>
                     <ListItem divider>
                     <Typography variant="body" gutterBottom>
-                      <strong>Song Genre</strong>: {track.primary_genres.music_genre_list[0].music_genre.music_genre_name}
+                      <strong>Song Genre</strong>: {track.primary_genres.music_genre_list[0] !== undefined ? track.primary_genres.music_genre_list[0].music_genre.music_genre_name : "Undefined"}
                     </Typography>
                     </ListItem>
                     <ListItem divider>

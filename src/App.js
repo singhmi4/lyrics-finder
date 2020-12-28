@@ -16,7 +16,7 @@ function App() {
           <>
             <CssBaseline/>
             <Navbar/>
-            <Container maxWidth="lg">
+            <Container maxWidth="md">
               <Switch>
                 <Route exact path="/" component={Index} />
                 <Route exact path="/lyrics/track/:id" component={Lyrics} />
