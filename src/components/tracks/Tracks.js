@@ -26,7 +26,7 @@ const Tracks = () => {
         </Grid>
         :  <> 
             <Typography variant="h5" align="center">{heading}</Typography>
-            <Grid container spacing={2} className={classes.root}>
+            <Grid container spacing={4} className={classes.root}>
               {trackList.map(item => (
                 <Track key={item.track.track_id} track={item.track} />
               ))}
