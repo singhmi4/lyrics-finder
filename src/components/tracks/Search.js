@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import axios from 'axios';
 import MusicProvider from '../../context'
-import { Card, CardContent, CardActions, TextField, Button, Typography } from '@material-ui/core'
+import { Card, CardContent, TextField, Button, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 
@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
 const Search = () => {
   const classes = useStyles();
   const [trackTitle, setTrackTitle] = useState("");
-  const context = useContext(MusicProvider.context);
+  const { setTrackList, setHeading } = useContext(MusicProvider.context);
+  
 
   const handleChange = (event) => {
     setTrackTitle(event.target.value);
@@ -29,8 +30,9 @@ const Search = () => {
       process.env.REACT_APP_MM_KEY
     }`)
       .then(res => {
-        console.log(res.data);
-       
+        // console.log(res.data);
+        setTrackList(res.data.message.body.track_list);
+        setHeading("Search Results");
       })
       .catch(err => console.log(err))
   }

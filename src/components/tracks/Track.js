@@ -4,10 +4,8 @@ import { Grid, Card, CardContent, CardActions, Typography, Button } from '@mater
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import AlbumIcon from '@material-ui/icons/Album';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { useTheme } from '@material-ui/core/styles'
 
 const Track = (props) => {
-  const theme = useTheme();
   const { track } = props;
   return (
     <Grid item xs={12} md={6}>

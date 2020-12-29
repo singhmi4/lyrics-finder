@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 const Tracks = () => {
   const classes = useStyles();
   const { trackList, heading } = useContext(MusicProvider.context);
-  console.log(trackList);
+  // console.log(trackList);
   return (
     <div className={classes.root}>
       {

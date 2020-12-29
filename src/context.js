@@ -20,7 +20,7 @@ const MusicProvider = ({ children }) => {
   }, []);
 
   return (
-    <context.Provider value={{ trackList, heading }}>
+    <context.Provider value={{ trackList, setTrackList, heading, setHeading }}>
       {children}
     </context.Provider>
   )
