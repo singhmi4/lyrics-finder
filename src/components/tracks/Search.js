@@ -33,6 +33,7 @@ const Search = () => {
         // console.log(res.data);
         setTrackList(res.data.message.body.track_list);
         setHeading("Search Results");
+        setTrackTitle("");
       })
       .catch(err => console.log(err))
   }

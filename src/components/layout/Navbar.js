@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import { Typography, Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,9 +24,11 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" align="center" className={classes.title}>
+          <Typography variant="h6" className={classes.title}>
             LyricFinder
           </Typography>
+          <Button component={Link} variant="contained" to="/" color="primary" disableElevation>Home</Button>
+          <Button component={Link} variant="contained" to="/favourites" color="primary" disableElevation>Liked Songs</Button>
         </Toolbar>
       </AppBar>
     </div>

@@ -5,7 +5,7 @@ const context = createContext(null);
 const MusicProvider = ({ children }) => {
 
   const [trackList, setTrackList] = useState([]);
-
+  const [favouriteTrackList, setFavouriteTrackList] = useState([]);
   const [heading, setHeading] = useState("Top 10 Tracks");
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const MusicProvider = ({ children }) => {
   }, []);
 
   return (
-    <context.Provider value={{ trackList, setTrackList, heading, setHeading }}>
+    <context.Provider value={{ trackList, setTrackList, heading, setHeading, favouriteTrackList, setFavouriteTrackList }}>
       {children}
     </context.Provider>
   )
