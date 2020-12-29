@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { Grid, Button, Card, CardContent, List, ListItem, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Spinner from '../layout/Spinner'
@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
 const Lyrics = (props) => {
   const classes = useStyles();
 
+  const history = useHistory();
   const [track, setTrack] = useState({});
   const [lyrics, setLyrics] = useState({});
 
@@ -41,8 +42,12 @@ const Lyrics = (props) => {
   return (
     <Grid className={classes.root} container spacing={2}>
       <Grid item xs={12}>
-        <Button component={Link} to="/" variant="contained" color="primary">
-          Go Back
+        <Button 
+          onClick={() => {
+            history.goBack();
+          }}
+          variant="contained" color="primary">
+            Go Back
         </Button>
       </Grid>
     {

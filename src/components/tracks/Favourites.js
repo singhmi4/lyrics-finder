@@ -18,13 +18,14 @@ const Favourites = () => {
     <div className={classes.root}>
       {
         favouriteTrackList === undefined || favouriteTrackList.length === 0 
-        ? <Grid container>
-            <Grid item xs={12} >
+        ? <Grid container spacing={2}>
+            <Grid item xs={12} justify="center" >
               <Typography variant="h5" align="center">You haven't favourited any tracks.</Typography>
-              <Button component={Link} to="/" variant="contained">Go Back</Button>  
+              <Button component={Link} to="/" variant="contained" color="primary" fullWidth>Go Back</Button>  
             </Grid>
         </Grid>
         :  <> 
+            <Button component={Link} to="/" variant="outlined" color="primary">Go Back</Button>
             <Typography variant="h5" align="center">Your Favs</Typography>
             <Grid container spacing={4} className={classes.root}>
               {favouriteTrackList.map(item => (
