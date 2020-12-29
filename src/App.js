@@ -5,6 +5,7 @@ import { theme } from "./themes/theme";
 import Navbar from './components/layout/Navbar'
 import Index from './components/layout/Index'
 import Lyrics from './components/tracks/Lyrics'
+import Favourites from './components/tracks/Favourites'
 
 import MusicProvider from './context'
 
@@ -20,6 +21,7 @@ function App() {
               <Switch>
                 <Route exact path="/" component={Index} />
                 <Route exact path="/lyrics/track/:id" component={Lyrics} />
+                <Route exact path="/favourites" component={Favourites} />
               </Switch>
             </Container>
           </>
